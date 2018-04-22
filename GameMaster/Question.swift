@@ -9,6 +9,8 @@
 import UIKit
 import CloudKit
 
+public let QuestionType = "Question"
+
 class Question: NSObject {
     var identifier: CKRecordID?
     var room: String?
@@ -35,9 +37,9 @@ class Question: NSObject {
     func record() -> CKRecord? {
         var record: CKRecord
         if let id = identifier {
-            record = CKRecord(recordType: HintType, recordID: id)
+            record = CKRecord(recordType: QuestionType, recordID: id)
         } else {
-            record = CKRecord(recordType: HintType)
+            record = CKRecord(recordType: QuestionType)
         }
         
         record.setValue(room, forKey:"room")

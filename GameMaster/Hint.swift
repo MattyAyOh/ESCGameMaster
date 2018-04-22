@@ -9,6 +9,8 @@
 import UIKit
 import CloudKit
 
+public let HintType = "Hint"
+
 class Hint: NSObject {
     var identifier: CKRecordID?
     var room: String?
