@@ -13,6 +13,8 @@
 		6B1992C1208875270080AA0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B1992C0208875270080AA0F /* Assets.xcassets */; };
 		6B1992C4208875270080AA0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B1992C2208875270080AA0F /* LaunchScreen.storyboard */; };
 		6B4E5A3A2088C559009EF8E4 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4E5A392088C559009EF8E4 /* CloudKit.framework */; };
+		6B4E5A43208CDF84009EF8E4 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4E5A41208CDF84009EF8E4 /* Question.swift */; };
+		6B4E5A44208CDF84009EF8E4 /* Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4E5A42208CDF84009EF8E4 /* Hint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		6B1992C5208875270080AA0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B1992F62088C4EE0080AA0F /* GameMaster.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GameMaster.entitlements; sourceTree = "<group>"; };
 		6B4E5A392088C559009EF8E4 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		6B4E5A41208CDF84009EF8E4 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		6B4E5A42208CDF84009EF8E4 /* Hint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 		6B1992B8208875250080AA0F /* GameMaster */ = {
 			isa = PBXGroup;
 			children = (
+				6B4E5A42208CDF84009EF8E4 /* Hint.swift */,
+				6B4E5A41208CDF84009EF8E4 /* Question.swift */,
 				6B1992F62088C4EE0080AA0F /* GameMaster.entitlements */,
 				6B1992B9208875250080AA0F /* AppDelegate.swift */,
 				6B1992BB208875250080AA0F /* ViewController.swift */,
@@ -157,6 +163,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B4E5A44208CDF84009EF8E4 /* Hint.swift in Sources */,
+				6B4E5A43208CDF84009EF8E4 /* Question.swift in Sources */,
 				6B1992BC208875250080AA0F /* ViewController.swift in Sources */,
 				6B1992BA208875250080AA0F /* AppDelegate.swift in Sources */,
 			);
