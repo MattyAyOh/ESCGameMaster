@@ -184,6 +184,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         return 0
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == precannedHintsTableView {
+            hintTextView.textColor = .black
+            hintTextView.text = precannedHints[indexPath.row].precanString
+            tableView.deselectRow(at: indexPath, animated: false)
+        }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == questionsTableView {
