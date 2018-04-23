@@ -12,6 +12,9 @@ import CloudKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate {
     let publicDB = CKContainer.init(identifier: "iCloud.esc.GameMaster").publicCloudDatabase
     
+    var hints = [Hint]()
+    var questions = [Question]()
+    var precannedHints = [Precan]()
     @IBOutlet weak var questionsTableView: UITableView!
     @IBOutlet weak var precannedHintsTableView: UITableView!
     @IBOutlet weak var hintTextView: UITextView!
@@ -24,6 +27,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         
 //        fetchAllHints()
+        fetchAllQuestions()
+        fetchAllPrecans()
+        fetchAllHints()
+        
         let tables = [questionsTableView, precannedHintsTableView, previousHintsTableView]
         for table in tables {
             table?.tableFooterView = UIView()
@@ -37,7 +44,86 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         hintTextView.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     }
     
+    func fetchAllQuestions() {
+        questionsTableView.isHidden = true
+        questionsActivityIndicator.isHidden = false
+        
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: QuestionType, predicate: predicate)
+        
+        publicDB.perform(query, inZoneWith: nil) { (records, error) in
+            if let error = error {
+                DispatchQueue.main.async {
+                    print("Cloud Query Error - Fetch Questions: \(error)")
+                }
+                return
+            }
+            
+            if let allQuestions = records?.map(Question.init) {
+                self.questions = allQuestions
+                DispatchQueue.main.async {
+                    self.questionsActivityIndicator.isHidden = true
+                    self.questionsTableView.isHidden = false
+                    self.questionsTableView.reloadData()
+                }
+            }
+        }
+    }
+    
+    func fetchAllPrecans() {
+        precannedHintsTableView.isHidden = true
+        precannedActivityIndicator.isHidden = false
+        
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: PrecanType, predicate: predicate)
+        
+        publicDB.perform(query, inZoneWith: nil) { (records, error) in
+            if let error = error {
+                DispatchQueue.main.async {
+                    print("Cloud Query Error - Fetch Precans: \(error)")
+                }
+                return
+            }
+            
+            if let allPrecans = records?.map(Precan.init) {
+                self.precannedHints = allPrecans
+                DispatchQueue.main.async {
+                    self.precannedActivityIndicator.isHidden = true
+                    self.precannedHintsTableView.isHidden = false
+                    self.precannedHintsTableView.reloadData()
+                }
+            }
+        }
+    }
+    
+    func fetchAllHints() {
+        previousHintsTableView.isHidden = true
+        previousActivityIndicator.isHidden = false
+        
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: HintType, predicate: predicate)
+        
+        publicDB.perform(query, inZoneWith: nil) { (records, error) in
+            if let error = error {
+                DispatchQueue.main.async {
+                    print("Cloud Query Error - Fetch Hints: \(error)")
+                }
+                return
+            }
+            
+            if let allHints = records?.map(Hint.init) {
+                self.hints = allHints
+                DispatchQueue.main.async {
+                    self.previousActivityIndicator.isHidden = true
+                    self.previousHintsTableView.isHidden = false
+                    self.previousHintsTableView.reloadData()
+                }
+            }
+        }
+    }
+    
     // MARK: TextView Delegate
+    
     func textViewDidBeginEditing(_ textView: UITextView)
     {
         if (textView.text == "Select a Pre-Canned Hint from Above, or Manually Type One...")
