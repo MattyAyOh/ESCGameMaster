@@ -138,6 +138,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     self.previousActivityIndicator.isHidden = true
                     self.previousHintsTableView.isHidden = false
                     self.previousHintsTableView.reloadData()
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        if UserDefaults().bool(forKey: "showPreviousHints") {
+                            self.previousHintsShowConstraint.isActive = true
+                            self.previousHintsHideConstraint.isActive = false
+                        }
+                    }
                 }
             }
         }
