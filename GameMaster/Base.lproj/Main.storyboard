@@ -29,6 +29,9 @@
                                             <segment title="Platinum"/>
                                             <segment title="Crimson"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="roomSegmentChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ern-T8-YWu"/>
+                                        </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Questions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocO-WO-BPc">
                                         <rect key="frame" x="16" y="74" width="736" height="29"/>
@@ -41,14 +44,14 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="Clear Question History"/>
                                         <connections>
-                                            <action selector="clearHistoryPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zDR-FH-Q7N"/>
+                                            <action selector="questionClearPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kf4-12-Jmf"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uI-E2-kLz" userLabel="Refresh Button">
                                         <rect key="frame" x="720" y="72" width="32" height="32"/>
                                         <state key="normal" image="Refresh"/>
                                         <connections>
-                                            <action selector="refreshButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3QM-u0-cAz"/>
+                                            <action selector="questionRefreshPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UDu-z2-vwY"/>
                                         </connections>
                                     </button>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Uum-XD-1V5">
@@ -117,7 +120,7 @@
                                         <rect key="frame" x="720" y="456" width="32" height="32"/>
                                         <state key="normal" image="Refresh"/>
                                         <connections>
-                                            <action selector="refreshButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a19-HC-kcf"/>
+                                            <action selector="precanRefreshPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MLK-EP-Ak9"/>
                                         </connections>
                                     </button>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ksf-1Y-yGD">
@@ -128,24 +131,24 @@
                                         <rect key="frame" x="16" y="495" width="736" height="331"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="precanCell" rowHeight="80" id="jKr-WR-Yej" customClass="ESCTableViewCell" customModule="GameMaster" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="736" height="80"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="precanCell" rowHeight="60" id="jKr-WR-Yej" customClass="ESCTableViewCell" customModule="GameMaster" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="736" height="60"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jKr-WR-Yej" id="dyC-L4-Y71">
-                                                    <rect key="frame" x="0.0" y="0.0" width="736" height="80"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="736" height="60"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fND-xJ-WTq">
-                                                            <rect key="frame" x="16" y="0.0" width="704" height="78.5"/>
+                                                            <rect key="frame" x="16" y="0.0" width="704" height="58.5"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="78" id="le8-FZ-igF"/>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="58" id="le8-FZ-igF"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IB4-HY-PJ4" userLabel="Seperator">
-                                                            <rect key="frame" x="8" y="78.5" width="720" height="1"/>
+                                                            <rect key="frame" x="8" y="58.5" width="720" height="1"/>
                                                             <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1" id="UAN-p9-bdK"/>
@@ -190,7 +193,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Send"/>
                                         <connections>
-                                            <action selector="sendButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Usk-zF-Hia"/>
+                                            <action selector="sendHintPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BL4-W4-u7F"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous Hints:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXc-Fj-MLw">
@@ -204,14 +207,14 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="Clear Previous History"/>
                                         <connections>
-                                            <action selector="clearHistoryPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yYx-xO-mdM"/>
+                                            <action selector="previousClearPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F0x-Y9-eqP"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48i-Xt-z8c" userLabel="Refresh Button">
                                         <rect key="frame" x="720" y="969" width="32" height="32"/>
                                         <state key="normal" image="Refresh"/>
                                         <connections>
-                                            <action selector="refreshButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7dr-BY-ACc"/>
+                                            <action selector="previousRefreshPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ntT-3V-aLx"/>
                                         </connections>
                                     </button>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="riT-Ng-PMm">
@@ -372,6 +375,7 @@
                         <outlet property="previousHintsTableView" destination="Pq7-ME-COp" id="nKH-Hz-rDM"/>
                         <outlet property="questionsActivityIndicator" destination="Uum-XD-1V5" id="qkg-Mp-Ymm"/>
                         <outlet property="questionsTableView" destination="xWX-hP-Ti0" id="VyX-Vt-gXs"/>
+                        <outlet property="roomSegmentedControl" destination="yyF-z0-1lj" id="VhA-7J-xvv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

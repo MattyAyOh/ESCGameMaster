@@ -62,6 +62,49 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         hintTextView.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     }
     
+    @IBAction func questionClearPressed(_ sender: UIButton) {
+        for question in questions {
+            if let record = question.record() {
+                publicDB.delete(withRecordID: record.recordID) { (recordID, error) in
+                    if let error = error {
+                        DispatchQueue.main.async {
+                            print("Cloud Query Error - Delete Question: \(error)")
+                        }
+                    }
+                }
+            }
+        }
+        questions.removeAll()
+        questionsTableView.reloadData()
+    }
+    @IBAction func questionRefreshPressed(_ sender: UIButton) {
+        fetchAllQuestions()
+    }
+    
+    @IBAction func precanRefreshPressed(_ sender: UIButton) {
+        fetchAllPrecans()
+    }
+    
+    @IBAction func previousClearPressed(_ sender: UIButton) {
+        for hint in hints {
+            if let record = hint.record() {
+                publicDB.delete(withRecordID: record.recordID) { (recordID, error) in
+                    if let error = error {
+                        DispatchQueue.main.async {
+                            print("Cloud Query Error - Delete Hint: \(error)")
+                        }
+                    }
+                }
+            }
+        }
+        hints.removeAll()
+        previousHintsTableView.reloadData()
+    }
+    
+    @IBAction func previousRefreshPressed(_ sender: UIButton) {
+        fetchAllHints()
+    }
+    
     @IBAction func previousHintsPressed(_ sender: Any) {
         UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
             if self.previousHintsShowConstraint.isActive {
