@@ -50,13 +50,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func previousHintsPressed(_ sender: Any) {
-        if previousHintsShowConstraint.isActive {
-            previousHintsShowConstraint.isActive = false
-            previousHintsHideConstraint.isActive = true
-        } else {
-            previousHintsShowConstraint.isActive = true
-            previousHintsHideConstraint.isActive = false
-        }
+        UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+            if self.previousHintsShowConstraint.isActive {
+                self.previousHintsShowConstraint.isActive = false
+                self.previousHintsHideConstraint.isActive = true
+                UserDefaults().set(false, forKey: "showPreviousHints")
+            } else {
+                self.previousHintsShowConstraint.isActive = true
+                self.previousHintsHideConstraint.isActive = false
+                UserDefaults().set(true, forKey: "showPreviousHints")
+            }
+            self.previousHintsTableView.layoutIfNeeded()
+        }, completion: nil)
+
     }
     
     func fetchAllQuestions() {
