@@ -18,11 +18,8 @@ class Question: NSObject {
     var hasBeenAnswered: Int64?
     
     override init() {
-        if let roomString = UserDefaults().object(forKey: "room") as? String {
-            room = roomString
-        } else {
-            print("Error: No Room Set")
-        }
+        // Need to check the ViewController's segmented control for the current room, though technically game master can't create questions
+        print("Error: No Room Set")
     }
     
     init(record: CKRecord) {
