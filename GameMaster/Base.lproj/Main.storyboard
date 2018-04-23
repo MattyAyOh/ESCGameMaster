@@ -167,7 +167,7 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="vB9-EZ-RHB"/>
                                         </connections>
                                     </tableView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ask Away..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sUJ-3a-UNh">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Select a Pre-Canned Hint from Above, or Manually Type One..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sUJ-3a-UNh">
                                         <rect key="frame" x="16" y="614" width="736" height="120"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>

@@ -10,14 +10,6 @@ import UIKit
 import CloudKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
-    }
-    
     let publicDB = CKContainer.init(identifier: "iCloud.esc.GameMaster").publicCloudDatabase
     
     @IBOutlet weak var questionsTableView: UITableView!
@@ -44,5 +36,38 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         hintTextView.layer.masksToBounds = true
         hintTextView.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     }
+    
+    // MARK: TextView Delegate
+    func textViewDidBeginEditing(_ textView: UITextView)
+    {
+        if (textView.text == "Select a Pre-Canned Hint from Above, or Manually Type One...")
+        {
+            textView.text = ""
+            textView.textColor = .black
+        }
+        textView.becomeFirstResponder()
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView)
+    {
+        if (textView.text == "")
+        {
+            textView.text = "Select a Pre-Canned Hint from Above, or Manually Type One..."
+            textView.textColor = .lightGray
+        }
+        textView.resignFirstResponder()
+    }
+    
+    
+    // MARK: TableView Delegate
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
 }
 
