@@ -104,7 +104,7 @@
                                         </connections>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cB3-Ue-WUe">
-                                        <rect key="frame" x="4" y="450" width="760" height="515"/>
+                                        <rect key="frame" x="4" y="450" width="760" height="514.5"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send Hint:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCA-sx-pmo">
@@ -173,10 +173,10 @@
                                         </connections>
                                     </tableView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Select a Pre-Canned Hint from Above, or Manually Type One..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sUJ-3a-UNh">
-                                        <rect key="frame" x="16" y="834" width="736" height="120"/>
+                                        <rect key="frame" x="16" y="842" width="736" height="112"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="120" id="NX1-PS-VX2"/>
+                                            <constraint firstAttribute="height" constant="112" id="NX1-PS-VX2"/>
                                         </constraints>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -273,7 +273,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOV-No-s55">
-                                        <rect key="frame" x="689" y="842" width="47" height="36"/>
+                                        <rect key="frame" x="689" y="850" width="47" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Clear"/>
                                         <connections>
@@ -316,7 +316,7 @@
                                     <constraint firstItem="yyF-z0-1lj" firstAttribute="top" secondItem="QnG-uC-iUt" secondAttribute="top" constant="30" id="Ucc-Wb-I3O"/>
                                     <constraint firstItem="xWX-hP-Ti0" firstAttribute="height" secondItem="Pq7-ME-COp" secondAttribute="height" id="Um1-Fk-lnY"/>
                                     <constraint firstItem="ef8-R8-8QQ" firstAttribute="top" secondItem="cB3-Ue-WUe" secondAttribute="bottom" constant="4" id="WX4-Wf-Dm5"/>
-                                    <constraint firstItem="sUJ-3a-UNh" firstAttribute="top" secondItem="ZTw-z4-QdP" secondAttribute="bottom" constant="8" id="XU1-MJ-CCr"/>
+                                    <constraint firstItem="sUJ-3a-UNh" firstAttribute="top" secondItem="ZTw-z4-QdP" secondAttribute="bottom" constant="16" id="XU1-MJ-CCr"/>
                                     <constraint firstAttribute="trailing" secondItem="KtD-13-XNM" secondAttribute="trailing" constant="16" id="Ycg-KU-dNX"/>
                                     <constraint firstAttribute="trailing" secondItem="CXc-Fj-MLw" secondAttribute="trailing" constant="16" id="Zjc-US-QJi"/>
                                     <constraint firstItem="0uI-E2-kLz" firstAttribute="centerY" secondItem="ocO-WO-BPc" secondAttribute="centerY" id="b0m-qe-CkH"/>
