@@ -25,6 +25,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var precannedActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var previousActivityIndicator: UIActivityIndicatorView!
 
+    @IBOutlet weak var previousHintsHideConstraint: NSLayoutConstraint!
+    @IBOutlet weak var previousHintsShowConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,6 +47,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         hintTextView.layer.cornerRadius = 10
         hintTextView.layer.masksToBounds = true
         hintTextView.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+    }
+    
+    @IBAction func previousHintsPressed(_ sender: Any) {
+        if previousHintsShowConstraint.isActive {
+            previousHintsShowConstraint.isActive = false
+            previousHintsHideConstraint.isActive = true
+        } else {
+            previousHintsShowConstraint.isActive = true
+            previousHintsHideConstraint.isActive = false
+        }
     }
     
     func fetchAllQuestions() {
@@ -146,7 +158,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         textView.resignFirstResponder()
     }
-    
     
     // MARK: TableView Delegate
     
