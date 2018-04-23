@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var currentRoom = "sepia"
     
+    
     @IBAction func roomSegmentChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             currentRoom = "sepia"
@@ -224,6 +225,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             print("Saved Successfully")
         }
+        hintTextView.text = ""
+        hintTextView.becomeFirstResponder()
+        hintTextView.resignFirstResponder()
     }
     
     @IBAction func clearHintPressed(_ sender: Any) {
