@@ -27,6 +27,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         } else if sender.selectedSegmentIndex == 2 {
             currentRoom = "crimson"
         }
+        fetchAllQuestions()
+        fetchAllPrecans()
+        fetchAllHints()
     }
     
     @IBOutlet weak var roomSegmentedControl: UISegmentedControl!
