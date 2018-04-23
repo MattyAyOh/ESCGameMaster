@@ -150,6 +150,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    
+    @IBAction func clearHintPressed(_ sender: Any) {
+        hintTextView.text = ""
+        hintTextView.becomeFirstResponder()
+        hintTextView.resignFirstResponder()
+    }
+    
     // MARK: TextView Delegate
     
     func textViewDidBeginEditing(_ textView: UITextView)
