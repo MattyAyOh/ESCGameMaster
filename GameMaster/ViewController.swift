@@ -16,6 +16,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var questions = [Question]()
     var precannedHints = [Precan]()
     
+    var currentRoom = "sepia"
+    
+    @IBAction func roomSegmentChanged(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            currentRoom = "sepia"
+        } else if sender.selectedSegmentIndex == 1 {
+            currentRoom = "platinum"
+        } else if sender.selectedSegmentIndex == 2 {
+            currentRoom = "crimson"
+        }
+    }
+    
+    @IBOutlet weak var roomSegmentedControl: UISegmentedControl!
     @IBOutlet weak var hintsContainer: UIView!
     @IBOutlet weak var questionsTableView: UITableView!
     @IBOutlet weak var precannedHintsTableView: UITableView!
@@ -65,11 +78,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     }
     
+    
+    
     func fetchAllQuestions() {
         questionsTableView.isHidden = true
         questionsActivityIndicator.isHidden = false
         
-        let predicate = NSPredicate(value: true)
+        let predicate = NSPredicate(format: "room = %@", currentRoom)
         let query = CKQuery(recordType: QuestionType, predicate: predicate)
         
         publicDB.perform(query, inZoneWith: nil) { (records, error) in
@@ -95,7 +110,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         precannedHintsTableView.isHidden = true
         precannedActivityIndicator.isHidden = false
         
-        let predicate = NSPredicate(value: true)
+        let predicate = NSPredicate(format: "room = %@", currentRoom)
         let query = CKQuery(recordType: PrecanType, predicate: predicate)
         
         publicDB.perform(query, inZoneWith: nil) { (records, error) in
@@ -121,7 +136,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         previousHintsTableView.isHidden = true
         previousActivityIndicator.isHidden = false
         
-        let predicate = NSPredicate(value: true)
+        let predicate = NSPredicate(format: "room = %@", currentRoom)
         let query = CKQuery(recordType: HintType, predicate: predicate)
         
         publicDB.perform(query, inZoneWith: nil) { (records, error) in
