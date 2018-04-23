@@ -15,6 +15,7 @@ class Question: NSObject {
     var identifier: CKRecordID?
     var room: String?
     var questionString: String?
+    var hasBeenAnswered: Int64?
     
     override init() {
         if let roomString = UserDefaults().object(forKey: "room") as? String {
@@ -31,6 +32,9 @@ class Question: NSObject {
         if let questionString = record.value(forKey: "questionString") as? String {
             self.questionString = questionString
         }
+        if let hasBeenAnswered = record.value(forKey: "hasBeenAnswered") as? Int64 {
+            self.hasBeenAnswered = hasBeenAnswered
+        }
         self.identifier = record.recordID
     }
     
@@ -44,6 +48,7 @@ class Question: NSObject {
         
         record.setValue(room, forKey:"room")
         record.setValue(questionString, forKey: "questionString")
+        record.setValue(hasBeenAnswered, forKey: "hasBeenAnswered")
         
         return record
     }
