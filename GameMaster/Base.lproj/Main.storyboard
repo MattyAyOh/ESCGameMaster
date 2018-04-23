@@ -30,7 +30,7 @@
                                             <segment title="Crimson"/>
                                         </segments>
                                         <connections>
-                                            <action selector="roomSegmentChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ern-T8-YWu"/>
+                                            <action selector="roomSegmentChanged:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="1fu-RM-HUd"/>
                                         </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Questions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocO-WO-BPc">
