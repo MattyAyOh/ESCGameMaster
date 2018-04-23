@@ -223,6 +223,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if tableView == precannedHintsTableView {
+            return false
+        }
+        return true
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if tableView == previousHintsTableView {
             if editingStyle == .delete {
