@@ -151,10 +151,36 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // MARK: TableView Delegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == questionsTableView {
+            return questions.count
+        } else if tableView == precannedHintsTableView {
+            return precannedHints.count
+        } else if tableView == previousHintsTableView {
+            return hints.count
+        }
         return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableView == questionsTableView {
+            let cell = questionsTableView.dequeueReusableCell(withIdentifier: "questionCell", for: indexPath)
+            if let hintCell = cell as? ESCTableViewCell {
+                hintCell.textView.text = questions[indexPath.row].questionString
+            }
+            return cell
+        } else if tableView == precannedHintsTableView {
+            let cell = precannedHintsTableView.dequeueReusableCell(withIdentifier: "precanCell", for: indexPath)
+            if let hintCell = cell as? ESCTableViewCell {
+                hintCell.textView.text = precannedHints[indexPath.row].precanString
+            }
+            return cell
+        } else if tableView == previousHintsTableView {
+            let cell = previousHintsTableView.dequeueReusableCell(withIdentifier: "hintCell", for: indexPath)
+            if let hintCell = cell as? ESCTableViewCell {
+                hintCell.textView.text = hints[indexPath.row].hintString
+            }
+            return cell
+        }
         return UITableViewCell()
     }
     
