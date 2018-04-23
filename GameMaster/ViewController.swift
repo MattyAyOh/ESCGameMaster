@@ -208,6 +208,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    @IBAction func sendHintPressed(_ sender: Any) {
+        let newHint:Hint = Hint()
+        newHint.hintString = hintTextView.text
+        newHint.room = currentRoom
+        guard let record = newHint.record() else {
+            return
+        }
+        publicDB.save(record) { (savedRecord, error) in
+            if let error = error {
+                DispatchQueue.main.async {
+                    print("Cloud Query Error - Save Hint: \(error)")
+                }
+                return
+            }
+            print("Saved Successfully")
+        }
+    }
     
     @IBAction func clearHintPressed(_ sender: Any) {
         hintTextView.text = ""
