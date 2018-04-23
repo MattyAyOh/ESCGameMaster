@@ -15,6 +15,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var hints = [Hint]()
     var questions = [Question]()
     var precannedHints = [Precan]()
+    
+    @IBOutlet weak var hintsContainer: UIView!
     @IBOutlet weak var questionsTableView: UITableView!
     @IBOutlet weak var precannedHintsTableView: UITableView!
     @IBOutlet weak var hintTextView: UITextView!
@@ -26,7 +28,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        fetchAllHints()
         fetchAllQuestions()
         fetchAllPrecans()
         fetchAllHints()
@@ -37,7 +38,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             table?.layer.cornerRadius = 10
             table?.layer.masksToBounds = true
         }
-
+        
+        hintsContainer.layer.cornerRadius = 10
+        hintsContainer.layer.masksToBounds = true
         
         hintTextView.layer.cornerRadius = 10
         hintTextView.layer.masksToBounds = true
