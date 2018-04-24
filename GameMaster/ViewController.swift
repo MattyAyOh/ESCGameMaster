@@ -278,6 +278,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             hintTextView.textColor = .black
             hintTextView.text = precannedHints[indexPath.row].precanString
             tableView.deselectRow(at: indexPath, animated: false)
+        } else if tableView == questionsTableView {
+            if let hasBeenAnswered = questions[indexPath.row].value(forKey: "hasBeenAnswered") as? Int64 {
+                if hasBeenAnswered == 1 {
+                    questions[indexPath.row].setValue(0, forKey: "hasBeenAnswered")
+                    if let ESCCell = tableView.cellForRow(at: indexPath) as? ESCTableViewCell {
+                        ESCCell.contentView.backgroundColor = .white
+                        ESCCell.textView.backgroundColor = .white
+                    }
+                } else {
+                    questions[indexPath.row].setValue(1, forKey: "hasBeenAnswered")
+                    if let ESCCell = tableView.cellForRow(at: indexPath) as? ESCTableViewCell {
+                        ESCCell.contentView.backgroundColor = UIColor(red: 76.0/255.0, green: 175.0/255.0, blue: 80.0/255.0, alpha: 1)
+                        ESCCell.textView.backgroundColor = UIColor(red: 76.0/255.0, green: 175.0/255.0, blue: 80.0/255.0, alpha: 1)
+                    }
+                }
+                
+                publicDB.save(questions[indexPath.row]) { (savedRecord, error) in
+                    if let error = error {
+                        DispatchQueue.main.async {
+                            print("Cloud Query Error - Update Question Answered: \(error)")
+                        }
+                        return
+                    }
+                }
+                
+            }
         }
     }
     
