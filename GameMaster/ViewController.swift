@@ -67,17 +67,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func questionClearPressed(_ sender: UIButton) {
-        for question in questions {
-            publicDB.delete(withRecordID: question.recordID) { (recordID, error) in
-                if let error = error {
-                    DispatchQueue.main.async {
-                        print("Cloud Query Error - Delete Question: \(error)")
+        let refreshAlert = UIAlertController(title: "Clear Questions", message: "All questions will be deleted.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            for question in self.questions {
+                self.publicDB.delete(withRecordID: question.recordID) { (recordID, error) in
+                    if let error = error {
+                        DispatchQueue.main.async {
+                            print("Cloud Query Error - Delete Question: \(error)")
+                        }
                     }
                 }
             }
-        }
-        questions.removeAll()
-        questionsTableView.reloadData()
+            self.questions.removeAll()
+            self.questionsTableView.reloadData()
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in }))
+        
+        present(refreshAlert, animated: true, completion: nil)
     }
     @IBAction func questionRefreshPressed(_ sender: UIButton) {
         fetchAllQuestions()
@@ -88,19 +96,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func previousClearPressed(_ sender: UIButton) {
-        for hint in hints {
-            if let record = hint.record() {
-                publicDB.delete(withRecordID: record.recordID) { (recordID, error) in
-                    if let error = error {
-                        DispatchQueue.main.async {
-                            print("Cloud Query Error - Delete Hint: \(error)")
+        let refreshAlert = UIAlertController(title: "Clear Previous Hints", message: "All previous hints will be deleted.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            for hint in self.hints {
+                if let record = hint.record() {
+                    self.publicDB.delete(withRecordID: record.recordID) { (recordID, error) in
+                        if let error = error {
+                            DispatchQueue.main.async {
+                                print("Cloud Query Error - Delete Hint: \(error)")
+                            }
                         }
                     }
                 }
             }
-        }
-        hints.removeAll()
-        previousHintsTableView.reloadData()
+            self.hints.removeAll()
+            self.previousHintsTableView.reloadData()
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in }))
+        
+        present(refreshAlert, animated: true, completion: nil)
     }
     
     @IBAction func previousRefreshPressed(_ sender: UIButton) {
