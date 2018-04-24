@@ -300,6 +300,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         textView.resignFirstResponder()
     }
     
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+
     // MARK: TableView Delegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
