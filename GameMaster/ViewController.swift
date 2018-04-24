@@ -157,7 +157,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             
             if records != nil {
-                self.questions = records!
+                self.questions = records!.sorted(by: { (first, second) -> Bool in
+                    if let firstDate = first.value(forKey: "creationDate") as? Date,
+                        let secondDate = second.value(forKey: "creationDate") as? Date {
+                        return firstDate > secondDate
+                    } else {
+                        return true
+                    }
+                })
             }
 
             DispatchQueue.main.async {
@@ -183,7 +190,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 return
             }
             
-            if let allPrecans = records?.map(Precan.init) {
+            let sortedRecords = records?.sorted(by: { (first, second) -> Bool in
+                if let firstDate = first.value(forKey: "creationDate") as? Date,
+                    let secondDate = second.value(forKey: "creationDate") as? Date {
+                    return firstDate > secondDate
+                } else {
+                    return true
+                }
+            })
+            if let allPrecans = sortedRecords?.map(Precan.init) {
                 self.precannedHints = allPrecans
                 DispatchQueue.main.async {
                     self.precannedActivityIndicator.isHidden = true
@@ -209,7 +224,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 return
             }
             
-            if let allHints = records?.map(Hint.init) {
+            let sortedRecords = records?.sorted(by: { (first, second) -> Bool in
+                if let firstDate = first.value(forKey: "creationDate") as? Date,
+                    let secondDate = second.value(forKey: "creationDate") as? Date {
+                    return firstDate > secondDate
+                } else {
+                    return true
+                }
+            })
+            
+            if let allHints = sortedRecords?.map(Hint.init) {
                 self.hints = allHints
                 DispatchQueue.main.async {
                     self.previousActivityIndicator.isHidden = true
