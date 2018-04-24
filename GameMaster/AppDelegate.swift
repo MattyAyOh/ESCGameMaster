@@ -30,32 +30,74 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let info = CKNotificationInfo()
-        info.alertBody = "Players have a question"
-        info.shouldBadge = false
-        info.soundName = "default"
-        info.title = "Sepia"
+        let sepiaInfo = CKNotificationInfo()
+        sepiaInfo.alertBody = "Players have a question"
+        sepiaInfo.shouldBadge = false
+        sepiaInfo.soundName = "default"
+        sepiaInfo.title = "Sepia"
         
-        let subscription = CKQuerySubscription(recordType: "Question", predicate: NSPredicate(format: "TRUEPREDICATE"), options: .firesOnRecordCreation)
-        subscription.notificationInfo = info
+        let platinumInfo = CKNotificationInfo()
+        platinumInfo.alertBody = "Players have a question"
+        platinumInfo.shouldBadge = false
+        platinumInfo.soundName = "default"
+        platinumInfo.title = "Platinum"
+        
+        let crimsonInfo = CKNotificationInfo()
+        crimsonInfo.alertBody = "Players have a question"
+        crimsonInfo.shouldBadge = false
+        crimsonInfo.soundName = "default"
+        crimsonInfo.title = "Crimson"
+        
+        let sepiaPredicate = NSPredicate(format: "room = %@", "sepia")
+        let platinumPredicate = NSPredicate(format: "room = %@", "platinum")
+        let crimsonPredicate = NSPredicate(format: "room = %@", "crimson")
 
+        let sepiaSub = CKQuerySubscription(recordType: "Question", predicate: sepiaPredicate, options: .firesOnRecordCreation)
+        sepiaSub.notificationInfo = sepiaInfo
+        let platinumSub = CKQuerySubscription(recordType: "Question", predicate: platinumPredicate, options: .firesOnRecordCreation)
+        platinumSub.notificationInfo = platinumInfo
+        let crimsonSub = CKQuerySubscription(recordType: "Question", predicate: crimsonPredicate, options: .firesOnRecordCreation)
+        crimsonSub.notificationInfo = crimsonInfo
+        
         let publicDB = CKContainer.init(identifier: "iCloud.esc.GameMaster").publicCloudDatabase
-        publicDB.save(subscription, completionHandler: { subscription, error in
+        publicDB.save(sepiaSub, completionHandler: { subscription, error in
             if error == nil {
                 print("success")
             } else {
                 print("fail")
             }
         })
-        
+        publicDB.save(platinumSub, completionHandler: { subscription, error in
+            if error == nil {
+                print("success")
+            } else {
+                print("fail")
+            }
+        })
+        publicDB.save(crimsonSub, completionHandler: { subscription, error in
+            if error == nil {
+                print("success")
+            } else {
+                print("fail")
+            }
+        })
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert, .sound])
 
-        
         if UIApplication.shared.applicationState == .active {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                if let mainVC = self.window?.rootViewController as? ViewController {
+                    if notification.request.content.title == "Sepia" {
+                        mainVC.roomSegmentedControl.selectedSegmentIndex = 0
+                    } else if notification.request.content.title == "Platinum" {
+                        mainVC.roomSegmentedControl.selectedSegmentIndex = 1
+                    } else if notification.request.content.title == "Crimson" {
+                        mainVC.roomSegmentedControl.selectedSegmentIndex = 2
+                    }
+                    mainVC.roomSegmentChanged(mainVC.roomSegmentedControl)
+                }
                 self.reloadData()
             }
         }
