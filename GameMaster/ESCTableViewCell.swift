@@ -10,4 +10,5 @@ import UIKit
 
 class ESCTableViewCell:UITableViewCell {
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var seperatorView: UIView!
 }

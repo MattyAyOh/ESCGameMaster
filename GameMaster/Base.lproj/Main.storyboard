@@ -97,6 +97,7 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="seperatorView" destination="DTS-J8-U9s" id="NyI-M0-p3J"/>
                                                     <outlet property="textView" destination="Gfl-C9-2PY" id="FWI-Tr-hhI"/>
                                                 </connections>
                                             </tableViewCell>
@@ -166,6 +167,7 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="seperatorView" destination="IB4-HY-PJ4" id="wa9-LJ-KLn"/>
                                                     <outlet property="textView" destination="fND-xJ-WTq" id="kov-OH-E53"/>
                                                 </connections>
                                             </tableViewCell>
@@ -260,6 +262,7 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="seperatorView" destination="byM-Ev-D4d" id="lnp-Ts-GUW"/>
                                                     <outlet property="textView" destination="Y0Y-45-ztB" id="4l9-tD-lZQ"/>
                                                 </connections>
                                             </tableViewCell>

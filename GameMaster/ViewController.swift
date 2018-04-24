@@ -279,19 +279,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             hintTextView.text = precannedHints[indexPath.row].precanString
             tableView.deselectRow(at: indexPath, animated: false)
         } else if tableView == questionsTableView {
-            if let hasBeenAnswered = questions[indexPath.row].value(forKey: "hasBeenAnswered") as? Int64 {
+            if let hasBeenAnswered = questions[indexPath.row].value(forKey: "hasBeenAnswered") as? Int64,
+            let questionCell = tableView.cellForRow(at: indexPath) as? ESCTableViewCell {
                 if hasBeenAnswered == 1 {
                     questions[indexPath.row].setValue(0, forKey: "hasBeenAnswered")
-                    if let ESCCell = tableView.cellForRow(at: indexPath) as? ESCTableViewCell {
-                        ESCCell.contentView.backgroundColor = .white
-                        ESCCell.textView.backgroundColor = .white
-                    }
+                    questionCell.contentView.backgroundColor = .white
+                    questionCell.textView.backgroundColor = .white
+                    questionCell.seperatorView.backgroundColor = .black
                 } else {
                     questions[indexPath.row].setValue(1, forKey: "hasBeenAnswered")
-                    if let ESCCell = tableView.cellForRow(at: indexPath) as? ESCTableViewCell {
-                        ESCCell.contentView.backgroundColor = UIColor(red: 76.0/255.0, green: 175.0/255.0, blue: 80.0/255.0, alpha: 1)
-                        ESCCell.textView.backgroundColor = UIColor(red: 76.0/255.0, green: 175.0/255.0, blue: 80.0/255.0, alpha: 1)
-                    }
+                    questionCell.contentView.backgroundColor = UIColor(red: 76.0/255.0, green: 175.0/255.0, blue: 80.0/255.0, alpha: 1)
+                    questionCell.textView.backgroundColor = UIColor(red: 76.0/255.0, green: 175.0/255.0, blue: 80.0/255.0, alpha: 1)
+                    questionCell.seperatorView.backgroundColor = .black
                 }
                 
                 publicDB.save(questions[indexPath.row]) { (savedRecord, error) in
@@ -302,7 +301,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         return
                     }
                 }
-                
             }
         }
     }
@@ -315,9 +313,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     if hasBeenAnswered == 1 {
                         hintCell.contentView.backgroundColor = UIColor(red: 76.0/255.0, green: 175.0/255.0, blue: 80.0/255.0, alpha: 1)
                         hintCell.textView.backgroundColor = UIColor(red: 76.0/255.0, green: 175.0/255.0, blue: 80.0/255.0, alpha: 1)
+                        hintCell.seperatorView.backgroundColor = .black
                     } else {
                         hintCell.contentView.backgroundColor = .white
                         hintCell.textView.backgroundColor = .white
+                        hintCell.seperatorView.backgroundColor = .black
                     }
                 }
                 hintCell.textView.text = Question(record: questions[indexPath.row]).questionString
