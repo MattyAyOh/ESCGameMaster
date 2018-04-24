@@ -390,6 +390,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if tableView == questionsTableView {
+            if editingStyle == .delete {
+                publicDB.delete(withRecordID: questions[indexPath.row].recordID) { (recordID, error) in
+                    DispatchQueue.main.async {
+                        if let error = error {
+                            print("Cloud Query Error - Delete Question: \(error)")
+                        }
+                        self.questions.remove(at: indexPath.row)
+                        self.questionsTableView.deleteRows(at: [indexPath], with: .fade)
+                        self.questionsTableView.reloadData()
+                    }
+                }
+            }
+        }
         if tableView == previousHintsTableView {
             if editingStyle == .delete {
                 if let record = hints[indexPath.row].record() {
