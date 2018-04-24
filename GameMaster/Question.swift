@@ -18,8 +18,8 @@ class Question: NSObject {
     var hasBeenAnswered: Int64?
     
     override init() {
-        // Need to check the ViewController's segmented control for the current room, though technically game master can't create questions
-        print("Error: No Room Set")
+        // Game master can't create questions
+        hasBeenAnswered = 0
     }
     
     init(record: CKRecord) {
