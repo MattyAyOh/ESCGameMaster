@@ -311,8 +311,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if tableView == questionsTableView {
             let cell = questionsTableView.dequeueReusableCell(withIdentifier: "questionCell", for: indexPath)
             if let hintCell = cell as? ESCTableViewCell {
+                if let hasBeenAnswered = questions[indexPath.row].value(forKey: "hasBeenAnswered") as? Int64 {
+                    if hasBeenAnswered == 1 {
+                        hintCell.contentView.backgroundColor = UIColor(red: 76.0/255.0, green: 175.0/255.0, blue: 80.0/255.0, alpha: 1)
+                        hintCell.textView.backgroundColor = UIColor(red: 76.0/255.0, green: 175.0/255.0, blue: 80.0/255.0, alpha: 1)
+                    } else {
+                        hintCell.contentView.backgroundColor = .white
+                        hintCell.textView.backgroundColor = .white
+                    }
+                }
                 hintCell.textView.text = Question(record: questions[indexPath.row]).questionString
             }
+            
             return cell
         } else if tableView == precannedHintsTableView {
             let cell = precannedHintsTableView.dequeueReusableCell(withIdentifier: "precanCell", for: indexPath)
