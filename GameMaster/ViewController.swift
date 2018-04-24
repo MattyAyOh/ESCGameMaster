@@ -327,26 +327,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             hintTextView.text = precannedHints[indexPath.row].precanString
             tableView.deselectRow(at: indexPath, animated: false)
         } else if tableView == questionsTableView {
-            if let hasBeenAnswered = questions[indexPath.row].value(forKey: "hasBeenAnswered") as? Int64,
-            let questionCell = tableView.cellForRow(at: indexPath) as? ESCTableViewCell {
+            if let hasBeenAnswered = questions[indexPath.row].value(forKey: "hasBeenAnswered") as? Int64 {
                 if hasBeenAnswered == 1 {
                     questions[indexPath.row].setValue(0, forKey: "hasBeenAnswered")
-                    questionCell.contentView.backgroundColor = .white
-                    questionCell.textView.backgroundColor = .white
-                    questionCell.seperatorView.backgroundColor = .black
                 } else {
                     questions[indexPath.row].setValue(1, forKey: "hasBeenAnswered")
-                    questionCell.contentView.backgroundColor = UIColor(red: 76.0/255.0, green: 175.0/255.0, blue: 80.0/255.0, alpha: 1)
-                    questionCell.textView.backgroundColor = UIColor(red: 76.0/255.0, green: 175.0/255.0, blue: 80.0/255.0, alpha: 1)
-                    questionCell.seperatorView.backgroundColor = .black
                 }
                 
                 publicDB.save(questions[indexPath.row]) { (savedRecord, error) in
-                    if let error = error {
-                        DispatchQueue.main.async {
+                    DispatchQueue.main.async {
+                        if let error = error {
                             print("Cloud Query Error - Update Question Answered: \(error)")
+                            return
                         }
-                        return
+                        self.questionsTableView.reloadData()
                     }
                 }
             }
