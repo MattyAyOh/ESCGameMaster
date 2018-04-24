@@ -34,28 +34,20 @@
                                         </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Questions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocO-WO-BPc">
-                                        <rect key="frame" x="16" y="74" width="736" height="29"/>
+                                        <rect key="frame" x="15" y="74" width="736" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBU-Ql-LYg">
-                                        <rect key="frame" x="526" y="72" width="164" height="32"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="Clear Question History"/>
-                                        <connections>
-                                            <action selector="questionClearPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kf4-12-Jmf"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uI-E2-kLz" userLabel="Refresh Button">
-                                        <rect key="frame" x="720" y="72" width="32" height="32"/>
+                                        <rect key="frame" x="719" y="72" width="32" height="32"/>
                                         <state key="normal" image="Refresh"/>
                                         <connections>
                                             <action selector="questionRefreshPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UDu-z2-vwY"/>
                                         </connections>
                                     </button>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Uum-XD-1V5">
-                                        <rect key="frame" x="374" y="191" width="20" height="20"/>
+                                        <rect key="frame" x="373" y="191" width="20" height="20"/>
                                         <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </activityIndicatorView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xWX-hP-Ti0" userLabel="Questions Table View">
@@ -112,24 +104,24 @@
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send Hint:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCA-sx-pmo">
-                                        <rect key="frame" x="16" y="458" width="736" height="29"/>
+                                        <rect key="frame" x="15" y="458" width="736" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtD-13-XNM" userLabel="Refresh Button">
-                                        <rect key="frame" x="720" y="456" width="32" height="32"/>
+                                        <rect key="frame" x="719" y="456" width="32" height="32"/>
                                         <state key="normal" image="Refresh"/>
                                         <connections>
                                             <action selector="precanRefreshPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MLK-EP-Ak9"/>
                                         </connections>
                                     </button>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ksf-1Y-yGD">
-                                        <rect key="frame" x="374" y="575" width="20" height="20"/>
+                                        <rect key="frame" x="373" y="575" width="20" height="20"/>
                                         <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </activityIndicatorView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZTw-z4-QdP" userLabel="Precanned Table View">
-                                        <rect key="frame" x="16" y="495" width="736" height="331"/>
+                                        <rect key="frame" x="15" y="495" width="736" height="331"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="precanCell" rowHeight="60" id="jKr-WR-Yej" customClass="ESCTableViewCell" customModule="GameMaster" customModuleProvider="target">
@@ -178,7 +170,7 @@
                                         </connections>
                                     </tableView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Select a Pre-Canned Hint from Above, or Manually Type One..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sUJ-3a-UNh">
-                                        <rect key="frame" x="16" y="842" width="736" height="112"/>
+                                        <rect key="frame" x="15" y="842" width="736" height="112"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="112" id="NX1-PS-VX2"/>
@@ -199,32 +191,32 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous Hints:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXc-Fj-MLw">
-                                        <rect key="frame" x="16" y="970" width="736" height="30"/>
+                                        <rect key="frame" x="15" y="970" width="736" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ef8-R8-8QQ">
-                                        <rect key="frame" x="529" y="969" width="161" height="32"/>
+                                        <rect key="frame" x="662" y="969" width="38" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="Clear Previous History"/>
+                                        <state key="normal" title="Clear"/>
                                         <connections>
                                             <action selector="previousClearPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F0x-Y9-eqP"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48i-Xt-z8c" userLabel="Refresh Button">
-                                        <rect key="frame" x="720" y="969" width="32" height="32"/>
+                                        <rect key="frame" x="719" y="969" width="32" height="32"/>
                                         <state key="normal" image="Refresh"/>
                                         <connections>
                                             <action selector="previousRefreshPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ntT-3V-aLx"/>
                                         </connections>
                                     </button>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="riT-Ng-PMm">
-                                        <rect key="frame" x="374" y="1088" width="20" height="20"/>
+                                        <rect key="frame" x="373" y="1088" width="20" height="20"/>
                                         <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </activityIndicatorView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pq7-ME-COp">
-                                        <rect key="frame" x="16" y="1008" width="736" height="0.0"/>
+                                        <rect key="frame" x="15" y="1008" width="736" height="0.0"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="hintCell" rowHeight="60" id="t08-YI-SxP" customClass="ESCTableViewCell" customModule="GameMaster" customModuleProvider="target">
@@ -273,7 +265,7 @@
                                         </connections>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4L-Vf-Q7t">
-                                        <rect key="frame" x="16" y="970" width="368" height="30"/>
+                                        <rect key="frame" x="15" y="970" width="368" height="30"/>
                                         <connections>
                                             <action selector="previousHintsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="761-GG-Dne"/>
                                         </connections>
@@ -284,6 +276,14 @@
                                         <state key="normal" title="Clear"/>
                                         <connections>
                                             <action selector="clearHintPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cqt-Ha-YHR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBU-Ql-LYg">
+                                        <rect key="frame" x="662" y="72" width="38" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Clear"/>
+                                        <connections>
+                                            <action selector="questionClearPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kf4-12-Jmf"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -307,7 +307,6 @@
                                     <constraint firstItem="KtD-13-XNM" firstAttribute="centerY" secondItem="sCA-sx-pmo" secondAttribute="centerY" id="E2a-lg-I3j"/>
                                     <constraint firstItem="CXc-Fj-MLw" firstAttribute="leading" secondItem="QnG-uC-iUt" secondAttribute="leading" constant="16" id="FPu-ZF-FGe"/>
                                     <constraint firstItem="ZTw-z4-QdP" firstAttribute="top" secondItem="ksf-1Y-yGD" secondAttribute="bottom" constant="-100" id="FeY-hd-l2M"/>
-                                    <constraint firstItem="ef8-R8-8QQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="K4L-Vf-Q7t" secondAttribute="trailing" constant="145" id="G80-sj-EBm"/>
                                     <constraint firstItem="xWX-hP-Ti0" firstAttribute="top" secondItem="ocO-WO-BPc" secondAttribute="bottom" constant="8" id="Hvo-Dy-hrz"/>
                                     <constraint firstItem="DOV-No-s55" firstAttribute="top" secondItem="sUJ-3a-UNh" secondAttribute="top" constant="8" id="I0C-gr-DN0"/>
                                     <constraint firstItem="xWX-hP-Ti0" firstAttribute="leading" secondItem="QnG-uC-iUt" secondAttribute="leading" constant="15" id="I3T-7d-0EC"/>
@@ -319,6 +318,7 @@
                                     <constraint firstAttribute="trailing" secondItem="0uI-E2-kLz" secondAttribute="trailing" constant="16" id="RpG-r2-SUt"/>
                                     <constraint firstAttribute="trailing" secondItem="ocO-WO-BPc" secondAttribute="trailing" constant="16" id="SHY-ry-hkF"/>
                                     <constraint firstItem="riT-Ng-PMm" firstAttribute="centerX" secondItem="QnG-uC-iUt" secondAttribute="centerX" id="TYl-Lg-2Uz"/>
+                                    <constraint firstItem="ef8-R8-8QQ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="QnG-uC-iUt" secondAttribute="leading" constant="662" id="Ttd-hS-rrF"/>
                                     <constraint firstItem="yyF-z0-1lj" firstAttribute="top" secondItem="QnG-uC-iUt" secondAttribute="top" constant="30" id="Ucc-Wb-I3O"/>
                                     <constraint firstItem="xWX-hP-Ti0" firstAttribute="height" secondItem="Pq7-ME-COp" secondAttribute="height" id="Um1-Fk-lnY"/>
                                     <constraint firstItem="ef8-R8-8QQ" firstAttribute="top" secondItem="cB3-Ue-WUe" secondAttribute="bottom" constant="4" id="WX4-Wf-Dm5"/>
@@ -333,23 +333,22 @@
                                     <constraint firstItem="K4L-Vf-Q7t" firstAttribute="width" secondItem="CXc-Fj-MLw" secondAttribute="width" multiplier="1:2" id="hZm-lc-vem"/>
                                     <constraint firstItem="ZTw-z4-QdP" firstAttribute="top" secondItem="sCA-sx-pmo" secondAttribute="bottom" constant="8" id="iXK-9I-HoD"/>
                                     <constraint firstItem="GvK-Ff-gGs" firstAttribute="leading" relation="lessThanOrEqual" secondItem="QnG-uC-iUt" secondAttribute="leading" constant="690" id="jBh-lk-ITj"/>
+                                    <constraint firstItem="dBU-Ql-LYg" firstAttribute="leading" relation="lessThanOrEqual" secondItem="QnG-uC-iUt" secondAttribute="leading" constant="662" id="kmt-7Q-Dnc"/>
                                     <constraint firstItem="xWX-hP-Ti0" firstAttribute="height" secondItem="ZTw-z4-QdP" secondAttribute="height" id="kzG-el-8iY"/>
                                     <constraint firstAttribute="trailing" secondItem="cB3-Ue-WUe" secondAttribute="trailing" constant="4" id="mW9-IP-aME"/>
                                     <constraint firstItem="sCA-sx-pmo" firstAttribute="top" secondItem="xWX-hP-Ti0" secondAttribute="bottom" constant="16" id="oip-fH-Uye"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="yyF-z0-1lj" secondAttribute="trailing" constant="30" id="pZH-XB-V6e"/>
                                     <constraint firstItem="ef8-R8-8QQ" firstAttribute="centerY" secondItem="CXc-Fj-MLw" secondAttribute="centerY" id="psb-bW-XRO"/>
-                                    <constraint firstItem="dBU-Ql-LYg" firstAttribute="leading" relation="lessThanOrEqual" secondItem="QnG-uC-iUt" secondAttribute="leading" constant="595" id="qXK-5D-eAm"/>
                                     <constraint firstItem="dBU-Ql-LYg" firstAttribute="centerY" secondItem="ocO-WO-BPc" secondAttribute="centerY" id="r0B-5U-v0O"/>
                                     <constraint firstItem="48i-Xt-z8c" firstAttribute="centerY" secondItem="CXc-Fj-MLw" secondAttribute="centerY" id="rDW-q9-1mH"/>
-                                    <constraint firstItem="48i-Xt-z8c" firstAttribute="leading" secondItem="ef8-R8-8QQ" secondAttribute="trailing" constant="30" id="rP1-aP-QJS"/>
+                                    <constraint firstItem="48i-Xt-z8c" firstAttribute="leading" secondItem="ef8-R8-8QQ" secondAttribute="trailing" constant="20" id="rP1-aP-QJS"/>
                                     <constraint firstItem="GvK-Ff-gGs" firstAttribute="trailing" secondItem="sUJ-3a-UNh" secondAttribute="trailing" constant="-16" id="swd-uR-vP2"/>
                                     <constraint firstAttribute="trailing" secondItem="xWX-hP-Ti0" secondAttribute="trailing" constant="16" id="uH5-4J-o7O"/>
                                     <constraint firstItem="sUJ-3a-UNh" firstAttribute="leading" secondItem="QnG-uC-iUt" secondAttribute="leading" constant="16" id="ub6-dm-7tS"/>
                                     <constraint firstAttribute="trailing" secondItem="ZTw-z4-QdP" secondAttribute="trailing" constant="16" id="uqa-fL-ALo"/>
                                     <constraint firstItem="GvK-Ff-gGs" firstAttribute="bottom" secondItem="sUJ-3a-UNh" secondAttribute="bottom" constant="-8" id="xbt-Lo-Nq9"/>
-                                    <constraint firstItem="ef8-R8-8QQ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="QnG-uC-iUt" secondAttribute="leading" constant="595" id="xfn-8u-YtW"/>
                                     <constraint firstItem="DOV-No-s55" firstAttribute="leading" relation="lessThanOrEqual" secondItem="QnG-uC-iUt" secondAttribute="leading" constant="690" id="zHk-Mp-e8R"/>
-                                    <constraint firstItem="0uI-E2-kLz" firstAttribute="leading" secondItem="dBU-Ql-LYg" secondAttribute="trailing" constant="30" id="zbu-bf-ehl"/>
+                                    <constraint firstItem="0uI-E2-kLz" firstAttribute="leading" secondItem="dBU-Ql-LYg" secondAttribute="trailing" constant="20" id="zbu-bf-ehl"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
