@@ -34,20 +34,20 @@
                                         </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Questions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocO-WO-BPc">
-                                        <rect key="frame" x="15" y="74" width="736" height="29"/>
+                                        <rect key="frame" x="16" y="74" width="736" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uI-E2-kLz" userLabel="Refresh Button">
-                                        <rect key="frame" x="719" y="72" width="32" height="32"/>
+                                        <rect key="frame" x="720" y="72" width="32" height="32"/>
                                         <state key="normal" image="Refresh"/>
                                         <connections>
                                             <action selector="questionRefreshPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UDu-z2-vwY"/>
                                         </connections>
                                     </button>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Uum-XD-1V5">
-                                        <rect key="frame" x="373" y="191" width="20" height="20"/>
+                                        <rect key="frame" x="374" y="191" width="20" height="20"/>
                                         <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </activityIndicatorView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xWX-hP-Ti0" userLabel="Questions Table View">
@@ -104,24 +104,24 @@
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send Hint:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCA-sx-pmo">
-                                        <rect key="frame" x="15" y="458" width="736" height="29"/>
+                                        <rect key="frame" x="16" y="458" width="736" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtD-13-XNM" userLabel="Refresh Button">
-                                        <rect key="frame" x="719" y="456" width="32" height="32"/>
+                                        <rect key="frame" x="720" y="456" width="32" height="32"/>
                                         <state key="normal" image="Refresh"/>
                                         <connections>
                                             <action selector="precanRefreshPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MLK-EP-Ak9"/>
                                         </connections>
                                     </button>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ksf-1Y-yGD">
-                                        <rect key="frame" x="373" y="575" width="20" height="20"/>
+                                        <rect key="frame" x="374" y="575" width="20" height="20"/>
                                         <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </activityIndicatorView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZTw-z4-QdP" userLabel="Precanned Table View">
-                                        <rect key="frame" x="15" y="495" width="736" height="331"/>
+                                        <rect key="frame" x="16" y="495" width="736" height="331"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="precanCell" rowHeight="60" id="jKr-WR-Yej" customClass="ESCTableViewCell" customModule="GameMaster" customModuleProvider="target">
@@ -170,7 +170,7 @@
                                         </connections>
                                     </tableView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Select a Pre-Canned Hint from Above, or Manually Type One..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sUJ-3a-UNh">
-                                        <rect key="frame" x="15" y="842" width="736" height="112"/>
+                                        <rect key="frame" x="16" y="842" width="736" height="112"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="112" id="NX1-PS-VX2"/>
@@ -191,7 +191,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous Hints:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXc-Fj-MLw">
-                                        <rect key="frame" x="15" y="970" width="736" height="30"/>
+                                        <rect key="frame" x="16" y="970" width="736" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -205,18 +205,18 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48i-Xt-z8c" userLabel="Refresh Button">
-                                        <rect key="frame" x="719" y="969" width="32" height="32"/>
+                                        <rect key="frame" x="720" y="969" width="32" height="32"/>
                                         <state key="normal" image="Refresh"/>
                                         <connections>
                                             <action selector="previousRefreshPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ntT-3V-aLx"/>
                                         </connections>
                                     </button>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="riT-Ng-PMm">
-                                        <rect key="frame" x="373" y="1088" width="20" height="20"/>
+                                        <rect key="frame" x="374" y="1088" width="20" height="20"/>
                                         <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </activityIndicatorView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pq7-ME-COp">
-                                        <rect key="frame" x="15" y="1008" width="736" height="0.0"/>
+                                        <rect key="frame" x="16" y="1008" width="736" height="0.0"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="hintCell" rowHeight="60" id="t08-YI-SxP" customClass="ESCTableViewCell" customModule="GameMaster" customModuleProvider="target">
@@ -265,7 +265,7 @@
                                         </connections>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4L-Vf-Q7t">
-                                        <rect key="frame" x="15" y="970" width="368" height="30"/>
+                                        <rect key="frame" x="16" y="970" width="368" height="30"/>
                                         <connections>
                                             <action selector="previousHintsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="761-GG-Dne"/>
                                         </connections>
@@ -319,7 +319,6 @@
                                     <constraint firstAttribute="trailing" secondItem="ocO-WO-BPc" secondAttribute="trailing" constant="16" id="SHY-ry-hkF"/>
                                     <constraint firstItem="riT-Ng-PMm" firstAttribute="centerX" secondItem="QnG-uC-iUt" secondAttribute="centerX" id="TYl-Lg-2Uz"/>
                                     <constraint firstItem="ef8-R8-8QQ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="QnG-uC-iUt" secondAttribute="leading" constant="662" id="Ttd-hS-rrF"/>
-                                    <constraint firstItem="yyF-z0-1lj" firstAttribute="top" secondItem="QnG-uC-iUt" secondAttribute="top" constant="30" id="Ucc-Wb-I3O"/>
                                     <constraint firstItem="xWX-hP-Ti0" firstAttribute="height" secondItem="Pq7-ME-COp" secondAttribute="height" id="Um1-Fk-lnY"/>
                                     <constraint firstItem="ef8-R8-8QQ" firstAttribute="top" secondItem="cB3-Ue-WUe" secondAttribute="bottom" constant="4" id="WX4-Wf-Dm5"/>
                                     <constraint firstItem="sUJ-3a-UNh" firstAttribute="top" secondItem="ZTw-z4-QdP" secondAttribute="bottom" constant="16" id="XU1-MJ-CCr"/>
@@ -362,6 +361,7 @@
                             <constraint firstItem="QnG-uC-iUt" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="8Cm-IY-qek"/>
                             <constraint firstItem="QnG-uC-iUt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DKp-tR-xYw"/>
                             <constraint firstItem="QnG-uC-iUt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="box-2H-a9g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="yyF-z0-1lj" secondAttribute="bottom" constant="-38" id="eCY-q5-7Ue"/>
                             <constraint firstItem="QnG-uC-iUt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="v8a-nv-3rg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
