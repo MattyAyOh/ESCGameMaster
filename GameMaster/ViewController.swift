@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let publicDB = CKContainer.init(identifier: "iCloud.esc.GameMaster").publicCloudDatabase
     
     var hints = [Hint]()
-    var questions = [Question]()
+    var questions = [CKRecord]()
     var precannedHints = [Precan]()
     
     var currentRoom = "sepia"
@@ -68,12 +68,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBAction func questionClearPressed(_ sender: UIButton) {
         for question in questions {
-            if let record = question.record() {
-                publicDB.delete(withRecordID: record.recordID) { (recordID, error) in
-                    if let error = error {
-                        DispatchQueue.main.async {
-                            print("Cloud Query Error - Delete Question: \(error)")
-                        }
+            publicDB.delete(withRecordID: question.recordID) { (recordID, error) in
+                if let error = error {
+                    DispatchQueue.main.async {
+                        print("Cloud Query Error - Delete Question: \(error)")
                     }
                 }
             }
@@ -142,13 +140,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 return
             }
             
-            if let allQuestions = records?.map(Question.init) {
-                self.questions = allQuestions
-                DispatchQueue.main.async {
-                    self.questionsActivityIndicator.isHidden = true
-                    self.questionsTableView.isHidden = false
-                    self.questionsTableView.reloadData()
-                }
+            if records != nil {
+                self.questions = records!
+            }
+
+            DispatchQueue.main.async {
+                self.questionsActivityIndicator.isHidden = true
+                self.questionsTableView.isHidden = false
+                self.questionsTableView.reloadData()
             }
         }
     }
@@ -286,7 +285,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if tableView == questionsTableView {
             let cell = questionsTableView.dequeueReusableCell(withIdentifier: "questionCell", for: indexPath)
             if let hintCell = cell as? ESCTableViewCell {
-                hintCell.textView.text = questions[indexPath.row].questionString
+                hintCell.textView.text = Question(record: questions[indexPath.row]).questionString
             }
             return cell
         } else if tableView == precannedHintsTableView {
