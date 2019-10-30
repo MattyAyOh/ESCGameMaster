@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { authorized, error in
@@ -30,19 +30,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let sepiaInfo = CKNotificationInfo()
+        let sepiaInfo = CKSubscription.NotificationInfo()
         sepiaInfo.alertBody = "Players have a question"
         sepiaInfo.shouldBadge = false
         sepiaInfo.soundName = "default"
         sepiaInfo.title = "Sepia"
         
-        let platinumInfo = CKNotificationInfo()
+        let platinumInfo = CKSubscription.NotificationInfo()
         platinumInfo.alertBody = "Players have a question"
         platinumInfo.shouldBadge = false
         platinumInfo.soundName = "default"
         platinumInfo.title = "Platinum"
         
-        let crimsonInfo = CKNotificationInfo()
+        let crimsonInfo = CKSubscription.NotificationInfo()
         crimsonInfo.alertBody = "Players have a question"
         crimsonInfo.shouldBadge = false
         crimsonInfo.soundName = "default"

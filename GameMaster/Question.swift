@@ -12,7 +12,7 @@ import CloudKit
 public let QuestionType = "Question"
 
 class Question: NSObject {
-    var identifier: CKRecordID?
+    var identifier: CKRecord.ID?
     var room: String?
     var questionString: String?
     var hasBeenAnswered: Int64?

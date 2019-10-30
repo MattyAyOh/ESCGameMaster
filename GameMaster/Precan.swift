@@ -12,7 +12,7 @@ import CloudKit
 public let PrecanType = "Precan"
 
 class Precan: NSObject {
-    var identifier: CKRecordID?
+    var identifier: CKRecord.ID?
     var room: String?
     var precanString: String?
     

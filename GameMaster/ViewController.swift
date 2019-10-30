@@ -67,7 +67,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func questionClearPressed(_ sender: UIButton) {
-        let refreshAlert = UIAlertController(title: "Clear Questions", message: "All questions will be deleted.", preferredStyle: UIAlertControllerStyle.alert)
+        let refreshAlert = UIAlertController(title: "Clear Questions", message: "All questions will be deleted.", preferredStyle: UIAlertController.Style.alert)
         
         refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
             for question in self.questions {
@@ -96,7 +96,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func previousClearPressed(_ sender: UIButton) {
-        let refreshAlert = UIAlertController(title: "Clear Previous Hints", message: "All previous hints will be deleted.", preferredStyle: UIAlertControllerStyle.alert)
+        let refreshAlert = UIAlertController(title: "Clear Previous Hints", message: "All previous hints will be deleted.", preferredStyle: UIAlertController.Style.alert)
         
         refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
             for hint in self.hints {
@@ -389,7 +389,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if tableView == questionsTableView {
             if editingStyle == .delete {
                 publicDB.delete(withRecordID: questions[indexPath.row].recordID) { (recordID, error) in

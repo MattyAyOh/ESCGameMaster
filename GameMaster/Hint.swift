@@ -12,7 +12,7 @@ import CloudKit
 public let HintType = "Hint"
 
 class Hint: NSObject {
-    var identifier: CKRecordID?
+    var identifier: CKRecord.ID?
     var room: String?
     var hintString: String?
     
